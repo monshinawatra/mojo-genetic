@@ -4,16 +4,11 @@ import algorithm.sort as sort
 import math
 
 
+@value
 @register_passable
 struct Node:
     var distance: Int
     var gene: SIMD[DType.uint8, 8]
-
-    fn __init__(distance: Int, gene: SIMD[DType.uint8, 8]) -> Self:
-        return Self {distance: distance, gene: gene}
-
-    fn __copyinit__(existing) -> Self:
-        return Self {distance: existing.distance, gene: existing.gene}
 
 
 fn generation(
